@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
     fun onClick() {
         val intent = Intent(this, SecondActivity::class.java)
         intent.putExtra(SecondActivity.EDIT_COUNT, binding.mainEdit.text)
-        startActivity(intent)
+        startActivityForResult(intent, 1)
     }
 
     companion object {

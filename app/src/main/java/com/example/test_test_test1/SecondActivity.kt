@@ -26,7 +26,7 @@ class SecondActivity : AppCompatActivity() {
 
         val intent = Intent(this, MainActivity::class.java)
         intent.putExtra(MainActivity.KEY_BUTTON, binding.secondTextVIew.text)
-        startActivity(intent)
+        startActivityForResult(intent, 1)
 
     }
 
