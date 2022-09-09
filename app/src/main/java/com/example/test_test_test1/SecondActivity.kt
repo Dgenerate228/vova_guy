@@ -13,12 +13,23 @@ class SecondActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySecondBinding.inflate(layoutInflater).also {setContentView(it.root)}
-        binding.secondTextVIew.findViewById<TextView>(R.id.secondTextVIew). also { onGet() }
-        }
+        binding = ActivitySecondBinding.inflate(layoutInflater).also { setContentView(it.root) }
+        binding.secondTextVIew.findViewById<TextView>(R.id.secondTextVIew).also { onGet() }
+        binding.backButton.setOnClickListener { onClick() }
+    }
+
     private fun onGet() {
         binding.secondTextVIew.setText(intent.getCharSequenceExtra(EDIT_COUNT))
     }
+
+    private fun onClick() {
+
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra(MainActivity.KEY_BUTTON, binding.secondTextVIew.text)
+        startActivity(intent)
+
+    }
+
     companion object {
         const val EDIT_COUNT = "EDIT_COUNT"
     }
