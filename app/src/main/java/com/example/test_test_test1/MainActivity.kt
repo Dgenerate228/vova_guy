@@ -30,15 +30,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-
-    override fun onStart() {
-        super.onStart()
-    }
-
-    override fun onResume() {
-        super.onResume()
-    }
-
     companion object {
         const val KEY_BUTTON = "KEY_BUTTON"
 
